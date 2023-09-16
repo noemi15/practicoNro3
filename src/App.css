@@ -2,17 +2,83 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* diseño titulo */
+h1 {
+    text-shadow: -8px 0px 7px rgb(65, 62, 6);
+    -webkit-text-stroke: 2px rgb(101, 97, 24);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* diseño del pedido de info */
+label{
+    padding: 18px 18px 28px 10px;
+    display: inline-block; 
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+}
+
+/* estilo de los bloques */
+input{
+    width: 40%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #593129;
+}
+
+/* estilo de botones */
+.boton{ 
+    font-family:'Courier New', Courier, monospace;  
+    background-color: burlywood;
+    font-weight:bold ;
+    font-size: 15px; 
+}
+
+/* estilo al darle click al boton  */
+.boton:active {
+    background-color: rgb(216, 210, 197);
   }
+
+
+/* separacion entre lineas */
+span{
+    margin:40px 40px 40px 40px ;
 }
 
+
+/* estilo al mesaje del ganador final  */
+.diff{
+    color:rgb(10, 10, 101)
+}
+
+/* animacion */
+@keyframes animar {
+   0%{ 
+    transform:scale(1.5);
+    }
+100%{
+    font-size: 50px;       
+    }
+}
+
+/* animacion al mensaje final */
+.final{
+  animation: animar 4s infinite;  
+  padding: 50px 80px 80px 50px;
+  font-size: 50px;
+}
+
+/* estilo al boton de reinicio */
+#reiniciar{
+    width: 40%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    color: #593129;
+    display: none;
+      
+}
+
+/*
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -36,3 +102,4 @@
     transform: rotate(360deg);
   }
 }
+*/
