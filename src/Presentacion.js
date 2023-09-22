@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-//import styled from 'styled-components'
+import styled from 'styled-components'
+import { Opciones } from './Opciones';
 
-/*const PresentacionStyled = styled.div`
+const PresentacionStyled = styled.div`
 .presentarse{
     width: 450px;     color:chocolate; 
 }
 
-/* estilo del saludo
+ /*estilo del saludo*/
 .bienvenida{
     border: 2px solid rgb(36, 15, 120);
     padding: 2px 10px 2px 10px;
@@ -18,52 +19,48 @@ import React, { useState } from 'react'
     font-weight:bold ;
     font-size: 15px; 
 }
-
-`*/
+`
 
 export const Presentacion = () => {
 
-  let[nombres, setNombres] = useState('');
-  let ingresoNombre = document.getElementById("ingresoNombre");
-  let nombreJugador=  document.getElementById("nombres");
+  let [nombres, setNombres] = useState('');
 
-  function setearNombre(){
-    if(nombreJugador.value.length === 0 ||nombreJugador.value == null ){
+  function setearNombre() {
+    let nombreJugador = document.getElementById("nombres").value;
+
+    if (nombreJugador.length === 0 || nombreJugador == null) {
       alert("Campo vacio, favor de ingresar nombre");
-  }// else {
-    
-    //let name = nombreJugador.value;
-    //setNombres(name)  ;
-     // jugador.innerHTML = nombreJugador.value;
-      //inicio.style.display = "block";
-      //presentacion.style.display = "none";
- // } 
-  }
-
-  ingresoNombre.addEventListener("click", setearNombre);      
+    } else {
+      setNombres(nombreJugador);
+    }
+  }    
   
   return (
+      <>
+    <PresentacionStyled>
+    
+    <div id="presentacionId" className="presentarse">
 
-    <div>
-
-<div id="presentacionId" className="presentarse">
-   
       <label htmlFor="nombre">Ingresar nombre: </label>
 
-      <input type="text" id="nombres" name="nombre" />
+      <input type="text" id="nombres"  />
       <br /> <br />
-      <button className="boton"  id="ingresoNombre"  >Empezar</button>
+      <button className="boton" id="ingresoNombre" onClick={setearNombre } >Empezar</button>
       <br />   <br />
-     
-   
-</div>
+      
+    </div>
 
 <div className="bienvenida">
         <h3>
           <span>Bienvenido(a)</span>
-          <span id="cargaNombre" />
+          <span>{nombres}</span>
+          {/*<span id="cargaNombre" />*/}
         </h3>
   </div>
-  </div>  
+  </PresentacionStyled>
+     
+    <Opciones pres={nombres}/>
+</>
 )
 }
+

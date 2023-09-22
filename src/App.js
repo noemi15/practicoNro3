@@ -1,10 +1,11 @@
 import './App.css';
-//import styled from 'styled-components';
-import {Presentacion } from './Presentacion';
-//import { Opciones } from './Opciones';
-import { Jugada } from './Jugada';
+import styled from 'styled-components';
+import {Presentacion}  from './Presentacion';
 
-/*const AppStyled = styled.main`
+//import { Jugada } from './Jugada';
+
+
+const AppStyled = styled.main`
 body{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: flex;
@@ -17,7 +18,7 @@ body{
     margin: 0;
 }
 
- Genera alineacion en el contexto 
+/* Genera alineacion en el contexto */
 .container {
     display: flex;
     flex-direction: column;
@@ -26,28 +27,26 @@ body{
     text-align: center;
 }
 `
-*/
-
+/* estructura de la pagina */
 function App() {
   return (
+    <AppStyled>
     
     <div className="App">
 
     {/* titulo a la pagina*/}
     <h1>PIEDRA - PAPEL - TIJERA</h1>
     
-    <div className="container">
+      <div className="container">
 
-    {/* pedido de datos  */}
-    <Presentacion></Presentacion>
+      {/* pedido de datos  */}
+    <Presentacion> </Presentacion>
 
-    {/*opciones de juego
-   <Opciones></Opciones>*/}
+      </div> 
 
-    {/* marcador de puntajes */}
-    <Jugada></Jugada>
-    </div> 
     </div>
+  
+    </AppStyled>
 
   )
 }
